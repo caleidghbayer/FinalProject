@@ -1,0 +1,4 @@
+WelcomeToDal
+FirstDayInClass,FirstDayMissedClass
+#Welcome to dal! 
+*Start the year

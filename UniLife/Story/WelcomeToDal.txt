@@ -1,4 +1,4 @@
 WelcomeToDal
-FirstDayInClass,FirstDayMissedClass
+FirstDayInClass,FirstDayMissedClass,CrazyThing
 #Welcome to dal! 
 *Start the year

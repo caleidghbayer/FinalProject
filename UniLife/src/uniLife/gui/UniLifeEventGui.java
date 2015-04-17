@@ -3,9 +3,13 @@ package uniLife.gui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.util.ArrayList;
+
 import uniLife.main.*;
+
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
@@ -25,7 +29,7 @@ public class UniLifeEventGui extends JPanel{
 		gridBagLayout.rowWeights = new double[]{1.0};
 		setLayout(gridBagLayout);
 		
-		eventText = new JLabel (e.getEventText());
+		eventText = new JLabel ("<html>" + e.getEventText() + "</html>");
 		GridBagConstraints gbc_eventText = new GridBagConstraints();
 		gbc_eventText.anchor = GridBagConstraints.NORTHWEST;
 		gbc_eventText.gridx = 0;
@@ -41,7 +45,10 @@ public class UniLifeEventGui extends JPanel{
 					gbc_end.gridy = i+1;
 					gbc_end.fill = GridBagConstraints.BOTH;
 					gbc_end.anchor = GridBagConstraints.LINE_START;
+					endButton.setPreferredSize(new Dimension(300,100));
 					this.add(endButton, gbc_end);
+					
+					endButton.addActionListener(window);
 				}else{
 					JButton newOption = new JButton (
 							Utilities.resolveName(game,e.getOptions().get(i)).getOptionText());
@@ -51,6 +58,7 @@ public class UniLifeEventGui extends JPanel{
 					gbc_newOption.gridy = i+1;
 					gbc_newOption.fill = GridBagConstraints.BOTH;
 					gbc_newOption.anchor = GridBagConstraints.LINE_START;
+					newOption.setPreferredSize(new Dimension(300,100));
 					this.add(newOption, gbc_newOption);
 					
 					newOption.addActionListener(window);

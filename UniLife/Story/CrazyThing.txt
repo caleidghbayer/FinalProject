@@ -1,0 +1,4 @@
+CrazyThing
+~
+#Suddenly something crazy happens
+*Do something crazy!

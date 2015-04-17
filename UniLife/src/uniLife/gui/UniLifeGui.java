@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -30,11 +31,11 @@ public class UniLifeGui extends JFrame implements ActionListener {
 		setBounds(100, 100, 328, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
 		event = new UniLifeEventGui (this,game,init);
 		this.add(event);
+		this.pack();
 		
 	}
 	
@@ -48,13 +49,17 @@ public class UniLifeGui extends JFrame implements ActionListener {
 		
 		String chosenOption = ((JButton) e.getSource()).getText();
 		
-		this.remove(event);
+		if (chosenOption.equals("The End")){
+			this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+		}else{
+			this.remove(event);
 
-		event = new UniLifeEventGui (this, game, Utilities.resolveOptionText(game, chosenOption));
-		this.add(event);
-		
-		this.revalidate();
-		this.repaint();
+			event = new UniLifeEventGui (this, game, Utilities.resolveOptionText(game, chosenOption));
+			this.add(event);
+			
+			this.revalidate();
+			this.repaint();
+		}
 	}
 
 }

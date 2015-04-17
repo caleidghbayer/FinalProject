@@ -81,12 +81,17 @@ public class Utilities {
 				
 				loadQueue.removeFirst();
 				
+				bReader.close();
+				fReader.close();
+				
 			}catch (IOException e){
 				System.out.println("Something went wrong reading an event file!");
 			}
 			
 			
 		}
+		
+		
 		
 		return result;
 	}

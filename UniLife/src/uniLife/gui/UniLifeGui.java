@@ -56,6 +56,7 @@ public class UniLifeGui extends JFrame implements ActionListener {
 
 			event = new UniLifeEventGui (this, game, Utilities.resolveOptionText(game, chosenOption));
 			this.add(event);
+			this.pack();
 			
 			this.revalidate();
 			this.repaint();
